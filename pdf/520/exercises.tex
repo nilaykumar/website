@@ -1,0 +1,83 @@
+\documentclass{amsart}
+
+\usepackage{mathrsfs}
+\usepackage{tikz-cd}
+\usepackage{amssymb}
+
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\UU}{U}
+\DeclareMathOperator{\OO}{O}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\HH}{H}
+\DeclareMathOperator{\Td}{Td}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\ch}{ch}
+
+
+\title{Exercises for 520-2}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{March 28, 2017}
+
+\begin{exercise}
+    Let $E\to X$ be a smooth complex vector bundle and $\mathscr{E}$ be its sheaf of smooth sections.
+    Show that if $\mathscr{U}=\{U_\alpha\}_{\alpha\in I}$ is a good cover for $X$ then $\check H^k(\mathscr{U},\mathscr{E})=0$
+    for $k>0$.
+    [Hint: fix a partition of unity $\eta$ for $\mathscr{U}$ and define a contracting homotopy
+        $s:\check C^k(\mathscr{U},\mathscr{E})\to \check C^{k-1}(\mathscr{U},\mathscr{E})$ by
+        \begin{equation}
+            (s\omega)_{\alpha_0\cdots\alpha_{k-1}} = \sum_\alpha \eta_\alpha \omega_{\alpha_0\cdots \alpha_{k-1}\alpha}.
+        \end{equation}
+        where $\omega\in\check C^k(\mathscr{U},\mathscr{E})$.]
+\end{exercise}
+
+\begin{exercise}
+    Construct explicitly the long exact sequence for \v Cech cohomology.
+\end{exercise}
+
+\begin{exercise}
+    Check that for a good cover $\mathscr{U}$ of $X$, the group $\check \HH^1(\mathscr{U},\underline{\GL(1,\C)})$
+    is isomorphic to the group $\Pic X$ of isomorphism classes of complex line bundles on $X$.
+\end{exercise}
+
+\begin{exercise}
+    Recall that the Todd genus of a complex line bundle $L\to X$ is the (inhomogeneous) cohomology
+    class $\Td(L)=f(c_1(L))$ where
+    $c_1(L)$ is the first Chern class of $L$ and $f(x)=x/(1-e^{-x})$. Compute the Todd genus of
+    a rank 2 complex vector bundle $E\to X$ in terms of $c_1(E)$ and $c_2(E)$.
+\end{exercise}
+
+\section{March 30, 2017}
+
+\begin{exercise}
+    Recall that the Chern character of $E=L_1\oplus \cdots \oplus L_r$ is defined
+    \begin{equation*}
+        \ch(E) = \sum_{i=1}^r \ch(L_i) = \sum_{i=1}^r  \exp c_1(L_i) = \sum_{k=0}^\infty\ch_k(E)
+    \end{equation*}
+    where $\ch_k(E)\in\HH^{2k}(X;\Q)$.
+    Check that $\ch_0(E)=r$ and $\ch_1(E)=c_1(E)$, then compute $\ch_2$ and $\ch_3$ in terms
+    of $c_i$.
+\end{exercise}
+
+\begin{exercise}
+    Let $X$ be a compact complex manifold and $E\to X$ be a holomorphic vector bundle whose
+    sheaf of holomorphic sections we write $\mathscr{E}$. The Hirzebruch-Riemann-Roch theorem is the equality
+    \begin{equation*}
+        \sum_{k=0}^\infty (-1)^k\dim \HH^k(X, \mathscr{E}) =: \chi(E) = \int_X \ch(E)\Td(X)
+    \end{equation*}
+    where $\Td(X):=\Td(TX)$. We will prove this theorem later in the course.
+    First recover the Riemann-Roch theorem from this equality, then
+    prove the theorem for $X=\C P^n$ and $E=\C P^n\times\C$ the trivial bundle.
+\end{exercise}
+
+\end{document}

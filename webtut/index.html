@@ -1,0 +1,162 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Setting up your Northwestern website</title>
+    </head>
+
+    <body style='background: #f6f6f6;'>
+        <h1>Setting up your Northwestern website</h1>
+
+        This page will walk you through the basics of getting your math.northwestern.edu website up and running.
+        <br/>
+        This is an extremely barebones guide that I wrote in a hurry so
+        if you have questions or need help debugging feel free to email me or drop by my office.
+        <br/><br/>
+
+        My website, for instance, is <a href='http://www.math.northwestern.edu/~nilay'>here</a>.
+        <br/>
+        If your math username were nilay this guide would set your webpage up
+        at <tt>http://www.math.northwestern.edu/~nilay</tt>.
+        <br/>
+        Note: your math username should be the username
+        in your northwestern math email address (something like <tt>...@math.northwestern.edu</tt>).
+
+        <br/><br/>
+
+        The website is written in HTML, which you can write in any plaintext editor of your choice.
+        I'll briefly explain how to link to pdfs and add images.
+        <br/>
+        (There are a lot of resources on HTML and related web dev stuff, so just google around if you want to learn more.)
+        <br/>
+        Then the HTML is uploaded to your math account (on a linux machine somewhere) via ftp to
+        the appropriate folder, after which you should be able to view it in your browser.
+        <br/>
+
+        <h2>Prerequisites</h2>
+
+        Here's what you need to get started:
+        <ul>
+            <li>
+                an HTML file containing the contents of your webpage.
+                <a href='sample.html'>Here</a> is a sample to get started.
+            </li>
+            <li>
+                a text editor to edit the HTML file. Notepad and TextEdit will do fine.
+            </li>
+            <li>
+                a tool to transfer your HTML file to the northwestern math server.
+                <br/>
+                There are many programs you can use, but one such is
+                <a href='https://filezilla-project.org/'>Filezilla</a>.
+                Download and install the client appropriate for your operating system.
+            </li>
+            <li>
+                <span style='color:red'>important: </span>make sure to follow this guide on a computer connected to a northwestern network!
+                Alternatively you can VPN into the northwestern network (instructions for this are <a href='https://www.it.northwestern.edu/oncampus/vpn/'>here</a>).
+                <br/>
+                Otherwise, due to recent security changes, the northwestern servers will not accept your connection.
+            </li>
+        </ul>
+
+        <h2>Guided setup</h2>
+
+        First we'll download the sample HTML file provided in the prerequisites section above.
+        <br/>
+        To do this click on that link and then right click anywhere in your browser and hit <tt>view page source</tt>
+        (the exact wording may differ based on your browser).
+        <br/>
+        Now copy all the code into your text editor. Save the file in your working directory as <tt>index.html</tt>.
+        <br/>
+        You could instead just download the source, but I find that the formatting gets messed up sometimes.
+        <br/>
+
+        Now open the HTML file in a browser (probably just by double clicking the file). You should see the sample webpage.
+        <br/>
+        <img src='Capture.PNG' width=75% height=75%>
+        <br/>
+        Since you're probably not Alexander Grothendieck, let's change the page heading
+        <br/>
+        In your text editor change the text within the <tt>h1</tt> tags in the code from <tt>Alexander Grothendieck</tt> to your name and save the file.
+        Keep the text editor open for now.
+        <br/>
+        Hit refresh in your browser. The webpage should now show your name as the header.
+        <br/>
+        Notice that the text in your browser's tab is still wrong! This can be fixed by editing the <tt>title</tt> tag in the code similar to before.
+        <br/>
+        <img src='Capture2.PNG' width=75% height=75%>
+
+        <br/> <br/> <br/>
+
+        There are two things left to fix. The first is that the example link to the pdf won't work. That's because the pdf file is missing.
+        <br/>
+        Place any pdf file in the same directory as the HTML file. I'll put in <tt>paper.pdf</tt>.
+        The code needs to be changed to point to the correct pdf.
+        <br/>
+        Change the text within the quotes after the <tt>a href=</tt> to <tt>paper.pdf</tt>, save, refresh, and the link should now work!
+        <br/>
+        <img src='Capture3.PNG' width=75% height=75%>
+
+        <br/> <br/> <br/>
+
+        I'll leave you to figure out how the external website link works. Next we need to fix the broken image.
+        <br/>
+        Again place any image file in the same directory as the HTML file. I'll put in <tt>portrait.jpg</tt>.
+        Change the code to point to the correct image as follows.
+        <br/>
+        Change the text within the quotes after the <tt>img src=</tt> to <tt>portrait.jpg</tt>. As usual, save and refresh,
+        and your image should now appear.
+        <br/>
+        <img src='Capture4.PNG' width=75% height=75%>
+
+        <br/> <br/> <br/>
+
+        That's all say about building your webpage. Currently the webpage is stored and viewed locally on your computer.
+        <br/>
+        The next step is to upload your files to the math server. The server will then serve those files to anyone who
+        visits the appropriate web address.
+        <br/>
+        To do this open up Filezilla. There will be two panes. The left represents files on your computer.
+        On the left, navigate to the directory with your website's files.
+        <br/>
+        Now we need to connect to the math server. Again make sure you're connected to the Northwestern
+        network directly or through VPN.
+        <br/>
+        Near the top of Filezilla, in the <tt>Host</tt> field enter <tt>lunt.math.northwestern.edu</tt>.
+        <br/>
+        For username and password enter your math username and password. Finally, for port, enter 22.
+        <br/>
+        Hit <tt>Quickconnect</tt> and you should see something like this:
+        <br/>
+        <img src='Capture5.PNG' width=75% height=75%>
+        <br/>
+        The right hand pane is displaying the files on the math server. Yours may look different than mine.
+        <br/>
+        In the right hand pane , if it doesn't exist already, create a directory called <tt>public_html</tt>
+        by right clicking the folder labelled by your username and choosing <tt>create directory</tt>.
+        <br/>
+
+        <img src='Capture6.PNG' width=75% height=75%>
+
+        <br/> <br/> <br/>
+
+        Now select your files in the left hand pane, right click them, and hit <tt>upload</tt>.
+        You should see something like:
+        <br/>
+        <img src='Capture7.PNG' width=75% height=75%>
+        <br/>
+        although I uploaded into a folder called <tt>temp</tt> instead of <tt>public_html</tt>,
+        since I didn't want to replace the files I already had.
+        <br/>
+        Now, in your browser, head to <tt>www.math.northwestern.edu/~USERNAME</tt>, replacing
+        <tt>USERNAME</tt> with your math username. The website should appear!
+        <br/>
+        <img src='Capture8.PNG' width=75% height=75%>
+        <br/>
+
+        <br/> <br/> <br/> <br/> <br/> <br/>
+
+
+    </body>
+
+</html>
